@@ -1,7 +1,15 @@
-CREATE DATABASE IF NOT EXISTS fmcg_sales;
+/**************************************************************
+* FMCG Sales Analysis Script (Phases 1-4)              *
+**************************************************************/
 
+-- ============================================================
+-- Phase 1: Database and Table Setup
+-- ============================================================
+
+CREATE DATABASE IF NOT EXISTS fmcg_sales;
 USE fmcg_sales;
 
+-- Create the main table to hold sales data
 CREATE TABLE IF NOT EXISTS sales_data (
     `date` DATE,
     `sku` VARCHAR(255),
@@ -19,10 +27,17 @@ CREATE TABLE IF NOT EXISTS sales_data (
     `units_sold` INT
 );
 
+-- ============================================================
+-- Phase 2: Data Quality & Integrity Checks
+-- ============================================================
+
+-- Show tables in the database to confirm creation
 show tables from fmcg_sales;
 
+-- Select all data to verify the import (optional, can be slow on large tables)
 select * from sales_data;
 
+-- Check for NULL values across key columns
 SELECT
     SUM(CASE WHEN `date` IS NULL THEN 1 ELSE 0 END) AS null_dates,
     SUM(CASE WHEN sku IS NULL THEN 1 ELSE 0 END) AS null_skus,
@@ -35,16 +50,13 @@ SELECT
     SUM(CASE WHEN price_unit IS NULL THEN 1 ELSE 0 END) AS null_prices
 FROM sales_data;
 
-
+-- Check for inconsistent categorical values
 SELECT DISTINCT channel FROM sales_data;
-
 SELECT DISTINCT region FROM sales_data;
-
 SELECT DISTINCT pack_type FROM sales_data;
-
 SELECT DISTINCT category FROM sales_data;
 
-
+-- Check for duplicate rows
 SELECT
     `date`, sku, brand, channel, region, pack_type, units_sold, COUNT(*)
 FROM
@@ -53,20 +65,26 @@ GROUP BY
     `date`, sku, brand, channel, region, pack_type, units_sold
 HAVING
     COUNT(*) > 1;
-    
 
-select category,
-CONCAT(
-FORMAT(SUM(price_unit * units_sold) / 1000000, 2), 
-'M'
-) AS total_revenue_in_millions
-from
-	sales_data
-group by
-	category
-order by
-	SUM(price_unit * units_sold) DESC;
-    
+-- ============================================================
+-- Phase 4: Business Intelligence Queries
+-- ============================================================
+
+-- Query 1: Total Revenue Per Category
+SELECT
+    category,
+    CONCAT(
+        FORMAT(SUM(price_unit * units_sold) / 1000000, 2),
+        'M'
+    ) AS total_revenue_in_millions
+FROM
+    sales_data
+GROUP BY
+    category
+ORDER BY
+    SUM(price_unit * units_sold) DESC;
+
+-- Query 2: Top 10 SKUs by Sales Volume
 SELECT
     sku,
     SUM(units_sold) AS total_units_sold
@@ -78,6 +96,7 @@ ORDER BY
     total_units_sold DESC
 LIMIT 10;
 
+-- Query 3: Average Delivery Lag by Region
 SELECT
     region,
     AVG(delivery_days) AS average_delivery_lag_days
@@ -87,12 +106,14 @@ GROUP BY
     region
 ORDER BY
     average_delivery_lag_days DESC;
-    
-    SELECT
+
+-- Query 4: Percentage of Sales Under Promotion
+SELECT
     (SUM(CASE WHEN promotion_flag = 1 THEN 1 ELSE 0 END) / COUNT(*)) * 100 AS percentage_of_sales_with_promotion
 FROM
     sales_data;
-    
+
+-- Query 5: Stockout Frequency Per SKU (Top 10)
 SELECT
     sku,
     COUNT(*) AS stockout_count
@@ -104,4 +125,4 @@ GROUP BY
     sku
 ORDER BY
     stockout_count DESC
-LIMIT 10; 
+LIMIT 10;
