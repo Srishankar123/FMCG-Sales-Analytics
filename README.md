@@ -1,77 +1,107 @@
-# FMCG Sales Performance & Forecasting Analysis (2022-2024)
+# 🛒 FMCG Sales Performance & Forecasting Analysis (2022–2024)
 
-### [View the Interactive Dashboard](dashboard/dashboard_overview.png) | [View the Full Analysis Notebook](notebooks/FMCG_Analysis_and_Forecasting.ipynb) | [View the SQL Queries](sql/fmcg_analysis.sql)
+### 🔗 Quick Links  
+📊 [Interactive Dashboard (Power BI)](<img width="1166" height="651" alt="image" src="https://github.com/user-attachments/assets/eec3fb4d-a229-4903-a2f0-db0c020e127d" />) | 📓 [Full Jupyter Notebook]([notebooks/FMCG_Analysis_and_Forecasting.ipynb](https://github.com/Srishankar123/FMCG-Sales-Analytics/blob/main/FMCG-Sales-Analytics/notebooks/FMCG%20Analysis%20and%20Forecasting.ipynb)) | 🗄️ [SQL Queries]([sql/fmcg_analysis.sql](https://github.com/Srishankar123/FMCG-Sales-Analytics/blob/main/FMCG-Sales-Analytics/sql/FCMG.sql))
 
 ---
 
 ## 📖 Project Overview
 
-This end-to-end data analytics project provides a comprehensive analysis of a synthetic FMCG (Fast-Moving Consumer Goods) sales dataset covering a three-year period. The primary objective was to leverage a multi-tool workflow—combining **SQL** for data integrity, **Python** for in-depth analysis and machine learning, and **Power BI** for interactive visualization—to extract actionable business insights.
+This **end-to-end analytics project** explores **3 years (2022–2024)** of synthetic FMCG (Fast-Moving Consumer Goods) sales data.  
 
-The project moves from foundational data cleaning and exploratory analysis to advanced techniques, including time-series forecasting and predictive modeling, culminating in a professional, interactive business intelligence dashboard.
+Using a **multi-tool workflow** — **SQL** for data validation, **Python** for analysis & forecasting, and **Power BI** for dashboarding — the project extracts **actionable insights** into sales performance, promotions, and inventory risks.  
 
----
-
-## 🛠️ Tech Stack & Skills
-
-* **Database Management:** **MySQL** (Data storage, integrity checks, and complex queries)
-* **Data Analysis & Manipulation:** **Python (Pandas)**
-* **Data Visualization:** **Python (Matplotlib, Seaborn)**, **Power BI**
-* **Time-Series Forecasting:** **Python (Prophet)**
-* **Machine Learning:** **Python (Scikit-learn, XGBoost)**
-* **Version Control:** **Git & GitHub**
+The pipeline moves from **data cleaning & EDA → forecasting → predictive modeling → interactive BI dashboard**, mirroring how analytics projects are executed in real-world businesses.
 
 ---
 
-## 📈 Project Workflow & Key Questions
+## 🛠️ Tech Stack & Skills Demonstrated
 
-The project was structured in a multi-phase workflow to move from raw data to actionable insights.
-
-### 1. **Data Cleaning & Preprocessing (SQL)**
-The raw CSV was loaded into a MySQL database where initial checks for duplicates, null values, and inconsistencies were performed to ensure a reliable foundation for analysis.
-
-### 2. **Exploratory Data Analysis (Python)**
-Using Python, the project answered foundational business questions:
-* What is the overall sales trend over time?
-* Which product categories and brands are the top performers?
-* How do sales channels and regions compare in performance?
-* What is the impact of promotions on sales volume?
-
-### 3. **Interactive Dashboard (Power BI)**
-The cleaned data was used to build a dynamic, interactive dashboard in Power BI. The dashboard serves as a central hub for monitoring key performance indicators (KPIs) and allows for filtering data by year, region, and category.
-
-### 4. **Advanced Analytics (Python)**
-* **Forecasting:** A Prophet time-series model was built to answer: **"What will our sales revenue be for the next 90 days?"**
-* **Predictive Modeling:** An XGBoost classification model was developed to answer: **"What are the key drivers of a high-volume sale?"**
+- 🗄️ **Database Management:** MySQL (data cleaning, aggregations, KPIs)  
+- 🐍 **Data Analysis & Manipulation:** Python (Pandas, Numpy)  
+- 📊 **Visualization:** Python (Matplotlib, Seaborn), Power BI  
+- ⏳ **Forecasting:** Prophet (time-series forecasting)  
+- 🤖 **Machine Learning:** Scikit-learn, XGBoost (predictive modeling)  
+- 🔧 **Version Control:** Git & GitHub  
 
 ---
 
-## 📊 Key Findings & Business Insights
+## 📈 Workflow & Business Questions
 
-### 1. **Strong, Predictable Growth**
-The business demonstrates a consistent upward trend in monthly revenue. The Prophet forecast predicts this growth will continue and successfully identified key seasonal patterns, including sales peaks on weekends and during the spring (March-April).
+### 1️⃣ Data Cleaning & Preprocessing (SQL)  
+✔️ Loaded raw CSV into MySQL  
+✔️ Checked for duplicates, nulls, and inconsistent values  
+✔️ Standardized product hierarchy (SKU → Brand → Segment → Category)  
 
-### 2. **Price & Promotions are Key Sales Drivers**
-The XGBoost predictive model (68% accuracy) identified **Price** as the most significant factor in predicting a high-volume sale. **Promotions** were the second most important driver. This provides quantitative evidence that pricing and marketing strategies are the most effective levers for influencing sales.
+### 2️⃣ Exploratory Data Analysis (Python)  
+Key questions answered:  
+- 📅 What is the **overall sales trend** over 3 years?  
+- 🏆 Which **categories & brands** are top performers?  
+- 🌍 How do **regions & sales channels** compare?  
+- 💸 What is the **impact of promotions** on sales?  
 
-### 3. **Promotions Boost Sales Volume by ~60%**
-On average, transactions with a promotion sold **~32 units**, while non-promotional transactions sold **~20 units**. This confirms that promotional campaigns are highly effective at increasing the number of units sold per transaction.
+### 3️⃣ Interactive Dashboard (Power BI)  
+Dynamic filters & KPIs:  
+- Total revenue, sales growth (YoY/MoM)  
+- Top brands & categories  
+- Sales by region & channel  
+- Promotion uplift analysis  
+- Stockout tracking  
 
-### 4. **Inventory Risks Identified**
-The stockout analysis pinpointed a list of top-offending SKUs that frequently have zero stock available, representing direct lost revenue and a poor customer experience. **SKU `YO-029`** was identified as a key product needing immediate inventory management review.
+### 4️⃣ Advanced Analytics (Python)  
+- 🔮 **Forecasting:** Prophet model predicting **90-day revenue**  
+- 🤖 **Predictive Modeling:** XGBoost classifier → identified **key sales drivers** (Price, Promotion)  
 
 ---
 
-##  dashboards Preview
+## 💡 Key Insights & Findings
 
-The final deliverable is an interactive Power BI dashboard that summarizes the key findings of the project.
+📌 **1. Strong, Predictable Growth**  
+- Consistent upward revenue trend (2022 → 2024).  
+- Seasonal peaks in **spring (March–April)** and **weekends**.  
 
-![Final Dashboard](dashboard/dashboard_overview.png)
+📌 **2. Price & Promotions Drive Sales**  
+- XGBoost (68% accuracy) ranked **Price** as the #1 driver of high-volume sales.  
+- Promotions ranked #2.  
+
+📌 **3. Promotions Increase Units Sold by ~60%**  
+- Avg. units sold per transaction:  
+  - 🔹 With promotion → **32 units**  
+  - 🔹 Without promotion → **20 units**  
+
+📌 **4. Inventory Risks Detected**  
+- Frequent stockouts in several SKUs.  
+- Example: **SKU `YO-029`** consistently understocked → **lost revenue risk**.  
 
 ---
 
-## How to Use This Repository
+## 📊 Dashboard Preview
 
-1.  **Database Setup:** The queries to create and populate the database are in the `sql/` folder.
-2.  **Jupyter Notebooks:** The full Python analysis, including EDA and machine learning models, is in the `notebooks/` folder.
-3.  **Dashboard:** Screenshots of the final dashboard are available in the `dashboard/` folder.
+The final interactive dashboard (built in Power BI):  
+
+![Final Dashboard](<img width="1166" height="651" alt="image" src="https://github.com/user-attachments/assets/958eb0ee-70ca-44ae-a258-33cdeb988765" />)
+
+---
+
+## 📂 Repository Structure
+
+```
+FMCG-Sales-Analytics/
+│── data/                # Raw & cleaned datasets
+│── sql/                 # SQL scripts (schema + queries)
+│── notebooks/           # Jupyter Notebook (EDA, forecasting, ML)
+│── dashboard/           # Power BI file + screenshots
+│── README.md            # Project documentation
+```
+
+---
+
+## 🚀 How to Use
+
+1. **Database Setup** → Run `sql/fmcg_analysis.sql` in MySQL to create schema & tables.  
+2. **Python Analysis** → Open `notebooks/FMCG_Analysis_and_Forecasting.ipynb` for full EDA + forecasting.  
+3. **Dashboard** → Open `dashboard/FMCG Retail Analytics Dashboard.pbix` in Power BI (or view screenshots).  
+
+---
+
+✨ This project demonstrates **end-to-end analytics: SQL + Python + Dashboarding + Forecasting** — making it **portfolio & interview ready**.  
