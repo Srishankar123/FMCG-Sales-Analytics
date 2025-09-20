@@ -36,6 +36,11 @@ Key questions answered:
 - 🌍 How do **regions & sales channels** compare?  
 - 💸 What is the **impact of promotions** on sales?  
 
+📓 **View Full Jupyter Notebook:**  
+[🔗 Click here to open in nbviewer](https://nbviewer.org/github/Srishankar123/FMCG-Sales-Analytics/blob/main/FMCG-Sales-Analytics/notebooks/FMCG%20Analysis%20and%20Forecasting.ipynb)
+
+---
+
 ### 3️⃣ Interactive Dashboard (Power BI)  
 Dynamic filters & KPIs:  
 - Total revenue, sales growth (YoY/MoM)  
@@ -95,8 +100,7 @@ FMCG-Sales-Analytics/
 
 1. **Database Setup** → Run `sql/fmcg_analysis.sql` in MySQL to create schema & tables.  
 2. **Python Analysis** → Open `notebooks/FMCG_Analysis_and_Forecasting.ipynb` for full EDA + forecasting.  
+   - Or view directly online via nbviewer: [📓 Notebook Link](https://nbviewer.org/github/Srishankar123/FMCG-Sales-Analytics/blob/main/FMCG-Sales-Analytics/notebooks/FMCG%20Analysis%20and%20Forecasting.ipynb)  
 3. **Dashboard** → Open `dashboard/FMCG Retail Analytics Dashboard.pbix` in Power BI (or view screenshots).  
 
 ---
-
-✨ This project demonstrates **end-to-end analytics: SQL + Python + Dashboarding + Forecasting** — making it **portfolio & interview ready**.  
