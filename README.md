@@ -1,7 +1,7 @@
 # 🛒 FMCG Sales Performance & Forecasting Analysis (2022–2024)
 
 ### 🔗 Quick Links  
-📊 [Interactive Dashboard (Power BI)]<img width="1166" height="651" alt="image" src="https://github.com/user-attachments/assets/eec3fb4d-a229-4903-a2f0-db0c020e127d" /> | 📓 [Full Jupyter Notebook]([notebooks/FMCG_Analysis_and_Forecasting.ipynb](https://github.com/Srishankar123/FMCG-Sales-Analytics/blob/main/FMCG-Sales-Analytics/notebooks/FMCG%20Analysis%20and%20Forecasting.ipynb)) | 🗄️ [SQL Queries]([sql/fmcg_analysis.sql](https://github.com/Srishankar123/FMCG-Sales-Analytics/blob/main/FMCG-Sales-Analytics/sql/FCMG.sql))
+📊 [Interactive Dashboard (Power BI)](<img width="1166" height="651" alt="image" src="https://github.com/user-attachments/assets/eec3fb4d-a229-4903-a2f0-db0c020e127d"/>) | 📓 [Full Jupyter Notebook]([notebooks/FMCG_Analysis_and_Forecasting.ipynb](https://github.com/Srishankar123/FMCG-Sales-Analytics/blob/main/FMCG-Sales-Analytics/notebooks/FMCG%20Analysis%20and%20Forecasting.ipynb)) | 🗄️ [SQL Queries]([sql/fmcg_analysis.sql](https://github.com/Srishankar123/FMCG-Sales-Analytics/blob/main/FMCG-Sales-Analytics/sql/FCMG.sql))
 
 ---
 
