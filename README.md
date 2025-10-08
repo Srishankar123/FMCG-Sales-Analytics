@@ -76,7 +76,8 @@ Example: SKU **YO-029** consistently understocked → lost revenue risk.
 
 ## 📊 Dashboard Preview  
 The final interactive dashboard (built in Power BI):  
-![Dashboard Preview](dashboard/FMCG_Dashboard_Preview.png)  
+(<img width="1166" height="651" alt="Screenshot 2025-09-20 154312" src="https://github.com/user-attachments/assets/73a9993e-d0b9-41a9-9b38-f357746bdd09" />
+)  
 
 
 ```
